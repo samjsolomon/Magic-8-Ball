@@ -1,24 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4b2-3g-J73">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="YCK-cs-52j">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="4b2-3g-J73" customClass="ViewController" customModule="Magic_8_Ball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eYv-cz-EXj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="9N7-ar-o8k">
+                                <rect key="frame" x="-193" y="48" width="800" height="800"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kpBall1" translatesAutoresizingMaskIntoConstraints="NO" id="JTv-Qg-gKz">
+                                        <rect key="frame" x="0.0" y="0.0" width="800" height="800"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33A-O2-6T4">
+                                <rect key="frame" x="117" y="783" width="180" height="59"/>
+                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="39"/>
+                                <state key="normal" title="Ask your question">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="askButtonPressed:" destination="4b2-3g-J73" eventType="touchUpInside" id="v0V-Pm-xAV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvf-YW-ad1">
+                                <rect key="frame" x="192" y="54" width="30" height="34"/>
+                                <fontDescription key="fontDescription" name="SnellRoundhand" family="Snell Roundhand" pointSize="17"/>
+                                <state key="normal" title="Info">
+                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="DhL-Te-Spd" kind="presentation" id="CDl-CG-Dxy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.078868829830000001" green="0.045171985050000002" blue="0.1932701459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="egk-Oy-aeE" firstAttribute="bottom" secondItem="33A-O2-6T4" secondAttribute="bottom" constant="20" id="95e-6m-dnR"/>
+                            <constraint firstItem="33A-O2-6T4" firstAttribute="centerX" secondItem="eYv-cz-EXj" secondAttribute="centerX" id="9yA-kn-7Gp"/>
+                            <constraint firstItem="Bvf-YW-ad1" firstAttribute="centerX" secondItem="eYv-cz-EXj" secondAttribute="centerX" id="Gle-Ku-pnG"/>
+                            <constraint firstItem="9N7-ar-o8k" firstAttribute="centerX" secondItem="eYv-cz-EXj" secondAttribute="centerX" id="NVe-yo-zmB"/>
+                            <constraint firstItem="Bvf-YW-ad1" firstAttribute="top" secondItem="egk-Oy-aeE" secondAttribute="top" constant="10" id="daH-Mx-iaC"/>
+                            <constraint firstItem="9N7-ar-o8k" firstAttribute="centerY" secondItem="eYv-cz-EXj" secondAttribute="centerY" id="lGa-4d-KdX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="egk-Oy-aeE"/>
+                    </view>
+                    <connections>
+                        <outlet property="ballImage" destination="JTv-Qg-gKz" id="Xcr-eF-JNU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORh-jn-5sm" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="112.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fk3-K7-QMM">
+            <objects>
+                <viewController id="DhL-Te-Spd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="buA-lm-9jZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Cml-7A-Vd8">
+                                <rect key="frame" x="78" y="214" width="240" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">This is my first app. While creating it I started to understaand concepts like arrays, user interface, randomizing integers, and basic swift and UI concepts.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3591598022401441" green="0.4736858207701945" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="zzq-0P-WZB"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pHc-wc-Bz0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="800.00000000000011" y="108.48214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="kpBall1" width="800" height="800"/>
+    </resources>
 </document>
